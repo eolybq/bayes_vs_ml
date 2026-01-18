@@ -5,9 +5,6 @@ import arviz as az
 import matplotlib.pyplot as plt
 
 
-# TODO udelat PCA kdyby MCMC nekonvergovalo nebo trvalo moc dlouho
-
-
 MODEL_DIR = Path("models/logit")
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
