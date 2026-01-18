@@ -65,6 +65,7 @@ X_test_vec = tfidf.transform(X_test)
 feature_names = tfidf.get_feature_names_out()
 df_readable = pd.DataFrame(X_train_vec.toarray(), columns=feature_names)
 
+print(X_train_vec.shape)
 
 # Naive Bayes
 nb_model = ComplementNB()
@@ -146,13 +147,12 @@ finb_pred_class = le.transform(finb_pred_df.idxmax(axis=1))
 
 
 # Evaluation
-# TODO BAYES METRICS, PLOTS
 def evaluate(y_pred, y_pred_class, model_label, save_name):
     print(f"-----{model_label} Evaluation-----")
     print(classification_report(y_test, y_pred_class, target_names=le.classes_))
     # NOTE ROC AUC SCORE ZDE JE OVO!
     print(
-        f"{model_label} Roc Auc Score: {roc_auc_score(y_test, y_pred, multi_class='ovo')}"
+        f"{model_label} Roc Auc Score: {roc_auc_score(y_test, y_pred, multi_class='ovo', average='weighted')}"
     )
     print(f"{model_label} Log loss: {log_loss(y_test, y_pred)}")
 
