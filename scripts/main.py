@@ -53,11 +53,11 @@ y_test = le.transform(y_test)
 
 
 # UCENI TFIDF
-# from sklearn.feature_extraction.text import TfidfVectorizer
-# tfidf = TfidfVectorizer(max_features=500, ngram_range=(1,2))
-# tfidf.fit(X_train)
-# joblib.dump(tfidf, model_path / 'tfidf_vectorizer.pkl')
-tfidf = joblib.load(model_path / "tfidf_vectorizer.pkl")
+from sklearn.feature_extraction.text import TfidfVectorizer
+tfidf = TfidfVectorizer(max_features=500, ngram_range=(1,2))
+tfidf.fit(X_train)
+joblib.dump(tfidf, model_path / 'tfidf_vectorizer.pkl')
+# tfidf = joblib.load(model_path / "tfidf_vectorizer.pkl")
 
 X_train_vec = tfidf.transform(X_train)
 X_test_vec = tfidf.transform(X_test)
@@ -76,19 +76,19 @@ nb_pred = nb_model.predict_proba(X_test_vec)
 
 # Logistic Regression
 # UCENI LOGIT
-# from scripts.services.logistic import train_log_model
-# idata, post_pred_train = train_log_model(
-#     X_train_vec,
-#     y_train,
-#     le.classes_,
-#     ppc_samples=150,
-#     n_iter=1000,
-#     n_iter_burn=1000,
-#     n_chains=4
-# )
+from scripts.services.logistic import train_log_model
+idata, post_pred_train = train_log_model(
+    X_train_vec,
+    y_train,
+    le.classes_,
+    ppc_samples=150,
+    n_iter=1000,
+    n_iter_burn=1000,
+    n_chains=4
+)
 
-idata = az.from_netcdf("models/logit/trace.nc")
-post_pred_train = az.from_netcdf("models/logit/posterior_train.nc")
+# idata = az.from_netcdf("models/logit/trace.nc")
+# post_pred_train = az.from_netcdf("models/logit/posterior_train.nc")
 
 
 # trace, autocorr, ppc train plots
@@ -123,8 +123,8 @@ logit_pred_class = logit_pred.argmax(axis=1)
 
 # FinBERT
 # UCENI FINBERT
-# from scripts.services.finbert import fine_tune_finbert
-# fine_tune_finbert(X_train=X_train, y_train=y_train)
+from scripts.services.finbert import fine_tune_finbert
+fine_tune_finbert(X_train=X_train, y_train=y_train)
 
 
 model_path = "models/fin_bert_finetuned"
