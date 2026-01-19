@@ -4,7 +4,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-FinBERT-EE4C2C?logo=pytorch&logoColor=white)
 ![PyMC](https://img.shields.io/badge/PyMC-Bayesian%20Inference-2C3E50?logo=pymc&logoColor=white)
 ![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Transformers-FFD21E?logo=huggingface&logoColor=black)
-![Scikit-learn](https://img.shields.io/badge/scikit--learn-Naive%20Bayes%20%2F%20classification%20evaluation-F7931E?logo=scikitlearn&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/scikit--learn-Naive%20Bayes%20%2F%20Classification%20Evaluation-F7931E?logo=scikitlearn&logoColor=white)
 
 
 > **Quick Summary:** A comparative study solving the "Black Box vs. Glass Box" dilemma in financial NLP. This project contrasts the raw predictive power of Large Language Models (**FinBERT**) against the interpretability of **Bayesian Logistic Regression** (MCMC) and the computation speed of **Naive Bayes** (SK-learn).
