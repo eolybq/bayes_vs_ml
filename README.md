@@ -27,11 +27,11 @@ The results highlight a clear trade-off. **FinBERT** dominates in pure performan
 ### 1. Performance Visualization (ROC Curves)
 *FinBERT (Right) achieves near-perfect separation for negative sentiment, significantly outperforming the statistical baselines.*
 
-<p float="left">
+<div align="center">
   <img src="figures/naive_bayes/roc_curve.png" width="45%" alt="Naive Bayes ROC" />
   <img src="figures/logit/roc_curve.png" width="45%" alt="Bayes Logistic Regression ROC" />
   <img src="figures/finbert/roc_curve.png" width="45%" alt="FinBERT ROC" /> 
-</p>
+</div>
 
 ---
 
@@ -71,10 +71,10 @@ The Forest Plot below reveals the **posterior distribution of weights**. Unlike 
 
 The Confusion Matrix shows that while FinBERT is superior, the hardest task for all models is distinguishing **Neutral** from Positive sentiment. However, FinBERT minimizes critical errors (predicting Positive when the reality is Negative).
 
-<p float="left">
+<div align="center">
   <img src="figures/logit/confusion_matrix.png" width="45%" alt="Bayes CM" />
   <img src="figures/finbert/confusion_matrix.png" width="45%" alt="FinBERT CM" /> 
-</p>
+</div>
 
 ---
 
