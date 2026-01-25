@@ -83,3 +83,15 @@ The Confusion Matrix shows that while FinBERT is superior, the hardest task for 
 * **Modeling:** PyTorch, PyMC, ArviZ, Scikit-learn
 * **NLP:** Transformers (Hugging Face), NLTK/Regex
 * **Viz:** Matplotlib, Seaborn
+
+---
+
+<div align="center">
+
+## 🎨 Concept: The Dilemma
+*Visualization of the project's core conflict: The interpretable precision of Classical Statistics vs. the raw power of Black-Box Deep Learning.*
+
+<br>
+<img src="assets/caricature.png" alt="Bayesian Wizard vs AI Robot" width="70%">
+
+</div>
